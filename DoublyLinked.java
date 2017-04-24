@@ -53,36 +53,57 @@ public class DoublyLinked {
     }
 
     public static void bubbleSort() {
-        Node temp;
         Node current = head;
         Node next = current.getNext();
-        head = current;
 
-        for(int i=0; i<size;i++){
-            for(int j=0; j<size;j++){
-                if(current.getData().compareTo(next.getData())<=0){
-                    temp = current;
-                    current.getNext().setData(current.getData());
-                    next.getPrev().setData(next.getData());
-
+        for (int i = 0; i < size; i++) {
+            //System.out.println(i+"i");
+            for (int j = 0; j < size; j++) {
+                if (next == null) {
+                    break;}
+                    if (current.getData().compareTo(next.getData()) >= 0) {
+                        swap(current, next);
+                    }
+                    current = next;
+                    next = current.getNext();
+                    //System.out.println(j+"j");
                 }
-
             }
         }
-        /*while (sorted == false) {
-            if (head.getData().compareTo(head.getNext().getData()) >= 0) {
-                head.setNext(head.getNext());
-            }
-            for (int i = 1; i < size; i++) {
-                if (current.getData().compareTo(next.getData()) >= 0) {
-                    current.getPrev() = next;
 
-                }
 
-            }
 
-        }*/
+    public static void swap(Node one, Node two) {
+        if (one == two.getPrev() || two == one.getPrev()) {
+         /* Order is relevant */
+            Node first;
+            Node second;
+            //if (one == two.getPrev()) {
+            first = one;
+            second = two;
+            //} else {
+            //    first = two;
+            //     second = one;
+            // }
+
+            first.setNext(second.getNext());
+            second.setPrev(first.getPrev());
+
+            if (first.getNext() != null)
+                first.getNext().setPrev(first);
+
+            if (second.getPrev() != null)
+                second.getPrev().setNext(second);
+
+            second.setNext(first);
+            first.setPrev(second);
+
+
+        }
     }
-}
+    }
+
+
+
 
 
