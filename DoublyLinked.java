@@ -1,12 +1,12 @@
 /**
  * Created by Brownie on 4/16/2017.
  */
-public class BubbleSort {
+public class DoublyLinked {
     private static Node head;
     private static Node tail;
     private int size;
 
-    public BubbleSort() {
+    public DoublyLinked() {
         head = null;
         tail = null;
         size = 0;
