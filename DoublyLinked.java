@@ -4,7 +4,7 @@
 public class DoublyLinked {
     private static Node head;
     private static Node tail;
-    private int size;
+    private static int size;
 
     public DoublyLinked() {
         head = null;
@@ -19,7 +19,7 @@ public class DoublyLinked {
             System.out.print("List is empty");
         }
         while (temp != null) {
-            System.out.println(temp.getData());
+            System.out.print(temp.getData() + ", ");
             temp = temp.getNext();
         }
     }
@@ -32,24 +32,44 @@ public class DoublyLinked {
             head = newNode;
             tail = head;
         } else {
-            temp = head;
-            holder = head.getNext();
-            //if the data is lower alphabetically do this
-            while (holder != null) {
-                //if data has reached end of the list then put data here
-                if (holder.getNext() == null) {
-                    holder.setNext(newNode);
-                    newNode.setPrev(holder);
-                    tail = newNode;
-                    break;
-                }
-                //iterates through the list
-                else {
-                    temp = holder;
-                    holder = holder.getNext();
-                }
-            }
+            newNode.setNext(head);
+            head.setPrev(newNode);
+            head = newNode;
         }
+
         size++;
     }
+
+    public void backTrav() {
+        Node temp = tail;
+        System.out.print("Iterate backward:\n");
+        if (temp == null) {
+            System.out.print("List is empty");
+        }
+        while (temp != null) {
+            System.out.print(temp.getData() + ", ");
+            temp = temp.getPrev();
+        }
+    }
+
+    public static void bubbleSort() {
+        boolean sorted = false;
+        Node current = head;
+        Node next = current.getNext();
+        while (sorted == false) {
+            if (head.getData().compareTo(head.getNext().getData()) >= 0) {
+                head.getNext() =
+            }
+            for (int i = 1; i < size; i++) {
+                if (current.getData().compareTo(next.getData()) >= 0) {
+                    current.getPrev() = next;
+
+                }
+
+            }
+
+        }
+    }
 }
+
+
