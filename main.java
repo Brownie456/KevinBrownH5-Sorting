@@ -8,27 +8,27 @@ public class main {
 
         DoublyLinked list = new DoublyLinked();
 
+//add items to list
+        list.add(53);
+        list.add(953);
+        list.add(876);
+        list.add(4345);
+        list.add(21);
+        list.add(123);
+        list.add(742);
+        list.add(33);
+        list.add(646);
 
-        list.add("5");
-        list.add("9");
-        list.add("8");
-        list.add("4");
-        list.add("2");
-        list.add("1");
-        list.add("7");
-        list.add("3");
-        list.add("6");
-
-        //System.out.println(list.tail);
-       // System.out.println("");
-       // System.out.println(list.head);
-
-        list.forwardTrav();
+//print the list unsorted
+        list.traverse();
         System.out.println("");
         System.out.println("Sort the list");
 
+        //sort the list
         list.bubbleSort();
-        list.forwardTrav();
+
+        //print list after the sort
+        list.traverse();
         System.out.println("");
         System.out.println("done");
 

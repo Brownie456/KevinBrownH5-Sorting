@@ -2,17 +2,17 @@
  * Created by Brownie on 4/16/2017.
  */
 public class Node {
-    private String data;
+    private int data;
     private Node next, prev;
     /*Constructor method */
     public Node(){
-        data = "";
+        data = 0;
         next = null;
         prev = null;
 
     }
     /*  Constructor with parameters*/
-    public Node(String data,Node next, Node prev) {
+    public Node(int data,Node next, Node prev) {
 
         this.data = data;
         this.next = next;
@@ -41,12 +41,12 @@ public class Node {
     }
 
     /*method to return the node in String */
-    public String getData() {
+    public int getData() {
         return data;
     }
 
     /*Method to set the data of node */
-    public void setData(String data) {
+    public void setData(int data) {
         this.data = data;
     }
 
