@@ -50,6 +50,7 @@ public class Node {
         this.data = data;
     }
 
+
     /*To string method to return the data of node */
     public String toString() {
         return " Name : "+this.data;

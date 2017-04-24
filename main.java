@@ -22,6 +22,13 @@ public class main {
 
         list.forwardTrav();
         System.out.println("");
+        System.out.println("Sort the list");
+
+        list.bubbleSort();
+        list.forwardTrav();
+        System.out.println("");
+
+
 
 }
 }

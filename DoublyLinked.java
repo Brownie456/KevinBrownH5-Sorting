@@ -53,12 +53,25 @@ public class DoublyLinked {
     }
 
     public static void bubbleSort() {
-        boolean sorted = false;
+        Node temp;
         Node current = head;
         Node next = current.getNext();
-        while (sorted == false) {
+        head = current;
+
+        for(int i=0; i<size;i++){
+            for(int j=0; j<size;j++){
+                if(current.getData().compareTo(next.getData())<=0){
+                    temp = current;
+                    current.getNext().setData(current.getData());
+                    next.getPrev().setData(next.getData());
+
+                }
+
+            }
+        }
+        /*while (sorted == false) {
             if (head.getData().compareTo(head.getNext().getData()) >= 0) {
-                head.getNext() =
+                head.setNext(head.getNext());
             }
             for (int i = 1; i < size; i++) {
                 if (current.getData().compareTo(next.getData()) >= 0) {
@@ -68,7 +81,7 @@ public class DoublyLinked {
 
             }
 
-        }
+        }*/
     }
 }
 
